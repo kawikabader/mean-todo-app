@@ -21,4 +21,18 @@ export class TodosComponent implements OnInit {
 				this.todos = todos;
 			});
 	}
+
+	addTodo($event, todoText) {
+		var result;
+		var newTodo = {
+			text: todoText.value,
+			isCompleted: false
+		};
+
+		result = this._todoService.saveTodos(newTodo);
+		result.subscribe(x => {
+			this.todos.push(newTodo);
+			todoText.value = "";
+		});
+	}
 }
