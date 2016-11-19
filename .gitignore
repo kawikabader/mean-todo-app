@@ -1,1 +1,4 @@
 node_modules/
+client/app/*.js
+client/app/*.map
+client/bower_components
